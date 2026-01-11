@@ -5,42 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Grid Layout</title>
     <style>
-        .container{
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 200px) 50px 50px;
+      .container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 200px) 50px 50px;
+      }
+      .box {
+        background-color: gray;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .big {
+        grid-row: span 5;
+      }
+      .small {
+        grid-column: span 3;
+      }
+      .red {
+        background-color: red;
+      }
+
+      @media screen and (max-width: 576px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(6, 200px);
         }
-        .box{
-            background-color: gray;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .big{
-            grid-row: span 5;
-        }
-        .small{
-            grid-column: span 3;
+        .big,
+        .small {
+            grid-column: span 1;
+            grid-row: span 1;
         }
         .red{
-            background-color: red;
+            background-color: green;
         }
+      }
     </style>
   </head>
   <body>
     <div class="container">
-        <div class="box big">Box-1</div>
-        <div class="box">Box-2</div>
-        <div class="box">Box-3</div>
-        <div class="box">Box-4</div>
-        <div class="box">Box-5</div>
-        <div class="box red">Box-6</div>
-        <div class="box red">Box-7</div>
-        <div class="box">Box-8</div>
-        <div class="box red">Box-9</div>
-        <div class="box red">Box-10</div>
-        <div class="box small">Box-11</div>
-        <div class="box small">Box-12</div>
+      <div class="box big">Box-1</div>
+      <div class="box">Box-2</div>
+      <div class="box">Box-3</div>
+      <div class="box">Box-4</div>
+      <div class="box">Box-5</div>
+      <div class="box red">Box-6</div>
+      <div class="box red">Box-7</div>
+      <div class="box">Box-8</div>
+      <div class="box red">Box-9</div>
+      <div class="box red">Box-10</div>
+      <div class="box small">Box-11</div>
+      <div class="box small">Box-12</div>
     </div>
   </body>
 </html>
